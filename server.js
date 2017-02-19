@@ -17,7 +17,11 @@ var articleone = {
                 This is my first article
             </p>`
     };
-
+var counter=0;
+app.get('/counter', function (req, res) {
+   counter = counter + 1;
+   res.send(counter.toString());
+});
 var articles={
     'article-one':{
         title:'Article 1|Abhijith Rajan',
