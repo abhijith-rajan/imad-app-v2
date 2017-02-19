@@ -48,12 +48,12 @@ var articles={
     }
 };
 app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleone));
+  res.send(createTemplate(articles[article-one]));
 });
 
 app.get('/:articleName', function (req, res) {
   var articleName=req.params.articleName;
-  res.send(createTemplate(article-one));
+  res.send(createTemplate(articles[articleName]));
 });
 
 function createTemplate(data)
