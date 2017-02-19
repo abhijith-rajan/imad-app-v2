@@ -8,11 +8,11 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var names=[]
+var names=[];
 app.get('/submit-name', function (req, res){
    var name=req.query.name;
    names=push(name);
-   res.send(JSON.stringify(name))
+   res.send(JSON.stringify(name));
 });
 var articleone = {
         title:`Article 1|Abhijith Rajan`,
