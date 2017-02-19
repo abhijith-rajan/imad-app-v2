@@ -19,7 +19,7 @@ button.onclick=function(){
           if(request.status===200)
           {
               var counter=request.responseText;
-              alert(counter.toString());
+              console.log(counter.toString());
               var count =document.getElementById('count');
               count.innerHTML=counter.toString();
           }
