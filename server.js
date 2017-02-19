@@ -8,6 +8,15 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+var articleone = {
+        title:`Article 1|Abhijith Rajan`,
+        heading:'Article 1',
+        date:'Feb 19,2017',
+        content:`
+            <p>
+                This is my first article
+            </p>`
+    };
 
 var articles={
     'article-one':{
@@ -38,6 +47,10 @@ var articles={
             </p>`
     }
 };
+app.get('/article-one', function (req, res) {
+  var articleName=req.params.articleName;
+  res.send(createTemplate(articleone));
+});
 
 app.get('/:articleName', function (req, res) {
   var articleName=req.params.articleName;
