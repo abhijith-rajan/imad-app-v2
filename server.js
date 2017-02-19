@@ -9,18 +9,75 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send('Article one served');
+var articles={
+    'article-one':{
+        title:'Article 1|Abhijith Rajan',
+        heading:'Article 1',
+        date:'Feb 19,2017',
+        content:`
+            <p>
+                This is my first article
+            </p>`
+    },
+    'article-two':{
+        title:'Article 2|Abhijith Rajan',
+        heading:'Article 2',
+        date:'Feb 20,2017',
+        content:`
+            <p>
+                This is my second article
+            </p>`
+    },
+    'article-three':{
+        title:'Article 3|Abhijith Rajan',
+        heading:'Article 3',
+        date:'Feb 21,2017',
+        content:`
+            <p>
+                This is my third article
+            </p>`
+    }
+};
+
+app.get('/:article-Name', function (req, res) {
+  var articleName=req.getparams(article-Name);
+  res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function (req, res) {
-  res.send('Article two served');
-});
-
-app.get('/article-three', function (req, res) {
-  res.send('Article three served');
-});
-
+function createTemplate(data)
+{
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var content=data.content;
+    var htmlTemplate=`
+        <html>
+            <head>
+                <title>
+                    ${title}
+                </title>
+                <link href="/ui/style.css" rel="stylesheet"/>
+                <meta name="viewport" width="width-device-width, initial-scale=1" />
+            </head>
+            <body>
+                <div class="container">
+                    <div>
+                        <a href="/">Home</a>
+                    </div>
+                    <hr/>
+                    <h3>
+                        ${heading}
+                    </h3>
+                    <div>
+                        ${date}
+                    </div>
+                    <div>
+                        ${content}
+                    </div>
+                </div>
+            </body>
+        </html>`;
+}           
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
