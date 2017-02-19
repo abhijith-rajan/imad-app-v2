@@ -49,7 +49,7 @@ submit.onclick=function(){
           }
       }
     };
-    var nameInput=document.getElementByID("name");
+    var nameInput=document.getElementById("name");
     name=nameInput.value;
     request.open('GET','http://abhijith-rajan.imad.hasura-app.io/submit-name?name='+name,true);
     request.send(null);
