@@ -40,7 +40,7 @@ var articles={
 };
 
 app.get('/:article-Name', function (req, res) {
-  var articleName=req.getparams(article-Name);
+  var articleName=req.getparams('article-Name');
   res.send(createTemplate(articles[articleName]));
 });
 
