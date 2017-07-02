@@ -100,7 +100,7 @@ function createTemplate(data)
     var heading=data.heading;
     var date=data.date;
     var content=data.content;
-    var htmlTemplate=`
+    var htmlTemplate='
         <html>
             <head>
                 <title>
@@ -126,7 +126,7 @@ function createTemplate(data)
                     </div>
                 </div>
             </body>
-        </html>`;
+        </html>';
     return htmlTemplate;
 }           
 app.get('/ui/style.css', function (req, res) {
