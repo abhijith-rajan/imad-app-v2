@@ -76,7 +76,7 @@ app.get('/test-db', function (req, res){
     });
 });
 
-app.get('articles/article-one', function (req, res) {
+app.get('/articles/:articleName', function (req, res) {
     //console.log(`GET`);
  // var articleName=req.params.articleName;
       pool.query('SELECT * FROM article WHERE title = "1"',function(err,result){
