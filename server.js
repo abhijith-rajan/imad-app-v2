@@ -89,7 +89,7 @@ app.get('articles/:articleName', function (req, res) {
           }
           else
           {
-              res.send(createTemplate(articleData.rows[0]));
+              res.send(createTemplate(result.rows[0]));
           }
       }
   });
