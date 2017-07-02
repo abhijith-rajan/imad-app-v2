@@ -43,7 +43,7 @@ var articles={
         content:`
             <p>
                 This is my first article
-            </p>`
+            </p>
     },
     'article-two':{
         title:'Article 2|Abhijith Rajan',
