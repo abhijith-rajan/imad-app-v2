@@ -91,7 +91,7 @@ app.get('articles/:articleName', function (req, res) {
               res.send(createTemplate(articleData.rows[0]));
           }
       }
-  })
+  });
 });
 
 function createTemplate(data)
