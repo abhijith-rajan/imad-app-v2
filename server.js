@@ -28,7 +28,7 @@ var articleone = {
         content:`
             <p>
                 This is my first article
-            </p>
+            </p>`
     };
 var counter=0;
 app.get('/counter', function (req, res) {
@@ -40,28 +40,28 @@ var articles={
         title:'Article 1|Abhijith Rajan',
         heading:'Article 1',
         date:'Feb 19,2017',
-        content:'
+        content:`
             <p>
                 This is my first article
-            </p>'
+            </p>`
     },
     'article-two':{
         title:'Article 2|Abhijith Rajan',
         heading:'Article 2',
         date:'Feb 20,2017',
-        content:'
+        content:`
             <p>
                 This is my second article
-            </p>'
+            </p>`
     },
     'article-three':{
         title:'Article 3|Abhijith Rajan',
         heading:'Article 3',
         date:'Feb 21,2017',
-        content:'
+        content:`
             <p>
                 This is my third article
-            </p>'
+            </p>`
     }
 };
 var pool = new Pool(config);
@@ -100,7 +100,7 @@ function createTemplate(data)
     var heading=data.heading;
     var date=data.date;
     var content=data.content;
-    var htmlTemplate='
+    var htmlTemplate=`
         <html>
             <head>
                 <title>
@@ -126,7 +126,7 @@ function createTemplate(data)
                     </div>
                 </div>
             </body>
-        </html>';
+        </html>`;
     return htmlTemplate;
 }           
 app.get('/ui/style.css', function (req, res) {
